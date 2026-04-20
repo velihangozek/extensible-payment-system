@@ -30,11 +30,15 @@ The project includes Swagger UI for interactive API documentation.
 
 ### Access Swagger UI
 
+```text
 http://localhost:8080/swagger-ui/index.html
+```
 
 ### OpenAPI JSON
 
+```text
 http://localhost:8080/v3/api-docs
+```
 
 ### Features
 
@@ -360,6 +364,7 @@ src/main/resources
 * Reflections library
 * Spring Boot logging
 * Postman (for API testing)
+* Swagger / OpenAPI (springdoc)
 
 ---
 
@@ -441,7 +446,7 @@ GET http://localhost:8080/
 
 ## Conclusion
 
-This project demonstrates how to build an extensible payment flow using clean architecture principles.
+This project was built to demonstrate clean backend architecture and extensibility principles in a real-world inspired payment flow scenario.
 
 It shows:
 
@@ -453,5 +458,4 @@ It shows:
 
 The result is a system that is easy to understand, easy to extend, and suitable for demonstrating backend design skills in a practical way.
 
-```
 ```
