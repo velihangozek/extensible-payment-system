@@ -1,5 +1,6 @@
 package com.velihangozek.payment;
 
+import com.velihangozek.payment.enums.PaymentType;
 import com.velihangozek.payment.model.PaymentRequest;
 import com.velihangozek.payment.model.PaymentResult;
 import com.velihangozek.payment.registry.PaymentProcessorRegistry;
@@ -16,7 +17,7 @@ public class Application {
         PaymentRequest request = new PaymentRequest(
                 new BigDecimal("150.00"),
                 "USD",
-                "APPLE_PAY"
+                PaymentType.CREDIT_CARD
         );
 
         PaymentResult result = paymentService.processPayment(request);
