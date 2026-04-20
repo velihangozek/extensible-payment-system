@@ -457,5 +457,3 @@ It shows:
 * structured error handling
 
 The result is a system that is easy to understand, easy to extend, and suitable for demonstrating backend design skills in a practical way.
-
-```
