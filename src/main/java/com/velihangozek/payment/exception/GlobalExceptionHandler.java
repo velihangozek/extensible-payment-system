@@ -3,6 +3,7 @@ package com.velihangozek.payment.web;
 import com.velihangozek.payment.exception.InvalidPaymentRequestException;
 import com.velihangozek.payment.exception.UnsupportedPaymentMethodException;
 import com.velihangozek.payment.web.dto.ApiErrorResponse;
+import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +15,7 @@ import java.time.OffsetDateTime;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
+    @Hidden
     @ExceptionHandler(InvalidPaymentRequestException.class)
     public ResponseEntity<ApiErrorResponse> handleInvalidPaymentRequest(
             InvalidPaymentRequestException ex,
@@ -30,6 +32,7 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
     }
 
+    @Hidden
     @ExceptionHandler(UnsupportedPaymentMethodException.class)
     public ResponseEntity<ApiErrorResponse> handleUnsupportedPaymentMethod(
             UnsupportedPaymentMethodException ex,
@@ -46,6 +49,7 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
     }
 
+    @Hidden
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<ApiErrorResponse> handleIllegalArgument(
             IllegalArgumentException ex,
@@ -62,11 +66,14 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
     }
 
+    @Hidden
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ApiErrorResponse> handleGenericException(
             Exception ex,
             HttpServletRequest request
     ) {
+        ex.printStackTrace();
+
         ApiErrorResponse errorResponse = new ApiErrorResponse(
                 OffsetDateTime.now(),
                 HttpStatus.INTERNAL_SERVER_ERROR.value(),
