@@ -158,6 +158,8 @@ com.velihangozek.payment
 │   ├── PaymentMethodResolutionHandler.java
 │   ├── PaymentExecutionHandler.java
 │   └── PaymentLoggingHandler.java
+├── enums
+    ├── PaymentType.java
 ├── exception
 │   ├── PaymentException.java
 │   ├── InvalidPaymentRequestException.java
@@ -236,7 +238,6 @@ org.slf4j.simpleLogger.log.org.reflections=warn
 
 ## Possible Future Improvements
 
-* Replace payment method string usage with an enum for stronger type safety
 * Add unit tests for validation and processor resolution
 * Add a Spring Boot REST API layer as a bonus extension
 * Add a minimal UI if needed

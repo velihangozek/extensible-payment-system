@@ -15,7 +15,7 @@ public class PaymentMethodResolutionHandler extends AbstractPaymentHandler {
 
     @Override
     public void handle(PaymentContext context) {
-        String paymentMethodType = context.getRequest().paymentMethodType().toString();
+        String paymentMethodType = context.getRequest().paymentMethodType().name();
 
         PaymentProcessor paymentProcessor = paymentProcessorRegistry.findProcessor(paymentMethodType)
                 .orElseThrow(() -> new UnsupportedPaymentMethodException(

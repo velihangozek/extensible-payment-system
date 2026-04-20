@@ -24,8 +24,8 @@ public class PaymentValidationHandler extends AbstractPaymentHandler {
             throw new InvalidPaymentRequestException("Currency cannot be blank.");
         }
 
-        if (request.paymentMethodType() == null || request.paymentMethodType().toString().isBlank()) {
-            throw new InvalidPaymentRequestException("Payment method type cannot be blank.");
+        if (request.paymentMethodType() == null) {
+            throw new InvalidPaymentRequestException("Payment method type cannot be null.");
         }
 
         handleNext(context);
