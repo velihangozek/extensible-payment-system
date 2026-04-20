@@ -16,7 +16,7 @@ public class Application {
         PaymentRequest request = new PaymentRequest(
                 new BigDecimal("150.00"),
                 "USD",
-                "PAYPAL"
+                "APPLE_PAY"
         );
 
         PaymentResult result = paymentService.processPayment(request);
