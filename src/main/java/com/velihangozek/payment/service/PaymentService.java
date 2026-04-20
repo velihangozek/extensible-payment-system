@@ -8,7 +8,9 @@ import com.velihangozek.payment.model.PaymentContext;
 import com.velihangozek.payment.model.PaymentRequest;
 import com.velihangozek.payment.model.PaymentResult;
 import com.velihangozek.payment.registry.PaymentProcessorRegistry;
+import org.springframework.stereotype.Service;
 
+@Service
 public class PaymentService {
 
     private final PaymentProcessorRegistry paymentProcessorRegistry;

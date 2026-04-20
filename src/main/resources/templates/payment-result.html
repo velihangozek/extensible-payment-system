@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Payment Result</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h1>Payment Result</h1>
+
+<p><strong>Success:</strong> <span th:text="${result.success()}"></span></p>
+<p><strong>Message:</strong> <span th:text="${result.message()}"></span></p>
+
+<a href="/">Back</a>
+</body>
+</html>

@@ -1,27 +1,11 @@
 package com.velihangozek.payment;
 
-import com.velihangozek.payment.enums.PaymentType;
-import com.velihangozek.payment.model.PaymentRequest;
-import com.velihangozek.payment.model.PaymentResult;
-import com.velihangozek.payment.registry.PaymentProcessorRegistry;
-import com.velihangozek.payment.service.PaymentService;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.math.BigDecimal;
-
+@SpringBootApplication
 public class Application {
     public static void main(String[] args) {
-        PaymentProcessorRegistry registry = new PaymentProcessorRegistry("com.velihangozek.payment");
-
-        PaymentService paymentService = new PaymentService(registry);
-
-        PaymentRequest request = new PaymentRequest(
-                new BigDecimal("150.00"),
-                "USD",
-                PaymentType.CREDIT_CARD
-        );
-
-        PaymentResult result = paymentService.processPayment(request);
-
-        System.out.println("Final result: " + result);
+        SpringApplication.run(Application.class, args);
     }
 }
