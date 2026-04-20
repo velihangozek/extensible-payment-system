@@ -432,7 +432,6 @@ GET http://localhost:8080/
 ## Possible Future Improvements
 
 * add unit and integration tests
-* add Swagger / OpenAPI documentation
 * improve form validation on the Thymeleaf page
 * persist payment requests/results with a database
 * add Docker support
